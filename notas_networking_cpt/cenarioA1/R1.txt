@@ -1,0 +1,59 @@
+!Autor: Izabel Souza
+!Curso Network Security 2023
+!Utilizando o Cisco Packet Tracer 8.2.1
+
+
+enable
+configure terminal
+hostname R1
+ip domain-name spot.com
+service password-encryption
+service timestamps log datetime msec
+crypto key generate rsa general-keys modulus 1024
+ntp server 10.1.1.10
+ntp authenticate
+ntp trusted-key 1
+ntp authentication-key 1 md5 m05tarda
+no ip domain-lookup
+
+!conectado ao servidor NTP
+interface g0/0
+ip address 10.1.1.1 255.255.255.0
+no shutdown
+exit
+
+!conectado ao servidor AAA
+interface g1/0
+ip address 10.2.2.1 255.255.255.0
+no shutdown
+exit
+
+!conectado ao Firewall
+interface g2/0
+ip address 10.4.4.1 255.255.255.0
+no shutdown
+exit
+
+!conectado Log Server
+interface g4/0
+ip address 10.3.3.1 255.255.255.0
+no shutdown
+exit
+
+
+!ligado ao Laptop
+interface g3/0
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+
+
+route ospf 1
+network 10.1.1.0 0.0.0.255 area 0
+network 10.2.2.0 0.0.0.255 area 0
+network 10.3.3.0 0.0.0.255 area 0
+network 10.4.4.0 0.0.0.255 area 0
+network 192.168.10.0 0.0.0.255 area 0
+log-adjacency-changes
+area 0 authentication message-digest
+exit

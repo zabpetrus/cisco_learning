@@ -1,0 +1,46 @@
+!após fazer o login
+configure terminal
+
+!Determinar o hostname do equipamento
+hostname ASA
+
+!Esta interface se conectará com a zona desmilitarizada
+interface g1/1
+nameif DMZ
+security-level 70
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+exit
+
+!Esta interface se conectará com a rede interna
+interface g1/2
+nameif INSIDE
+security-level 100
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+
+!lista de acesso que permitirá a conexão da rede DMZ com INSIDE (Interna)
+access-list INSIDE_TO_DMZ extended permit ip 192.168.10.0 255.255.255.0 192.168.20.0 255.255.255.0
+access-list INSIDE_TO_DMZ extended permit icmp 192.168.10.0 255.255.255.0 192.168.20.0 255.255.255.0
+
+access-list DMZ_TO_INSIDE extended permit ip 192.168.20.0 255.255.255.0 192.168.10.0 255.255.255.0
+access-list DMZ_TO_INSIDE extended permit icmp 192.168.20.0 255.255.255.0 192.168.10.0 255.255.255.0
+
+access-group INSIDE_TO_DMZ in interface INSIDE
+access-group DMZ_TO_INSIDE in interface DMZ
+
+class-map INSIDE_TO_DMZ_CLASS
+ match access-list INSIDE_TO_DMZ
+exit
+
+class-map DMZ_TO_INSIDE_CLASS
+ match access-list DMZ_TO_INSIDE
+exit
+
+policy-map global_policy
+class INSIDE_TO_DMZ_CLASS
+inspect ftp 
+class DMZ_TO_INSIDE_CLASS
+inspect ftp
+service-policy global_policy global
