@@ -1,0 +1,16 @@
+cat /etc/nginx/nginx.conf
+
+sudo pacman-key --init
+sudo pacman-key --populate archlinux
+
+sudo pacman -Syy
+
+sudo nano -w /etc/pacman.conf
+
+sudo pacman -S wireshark-qt
+
+sudo pacman -S wireshark-cli
+
+sudo tcpdumb -l H1-etho -v -c 50 -w /home/analyst/capture.pcmp
+
+

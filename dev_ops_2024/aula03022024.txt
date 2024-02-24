@@ -1,0 +1,27 @@
+sudo ~/lab.support.files/scripts/cyberops_topo.py
+
+mininet> xterm H1
+
+no xterm:
+wireshark &
+
+nmap -A -T4 localhost
+ip add
+sudo netdiscover
+nmap -A -T4 10.0.2.0/24
+
+
+cd /home/analyst/lab.support.files/
+cat letter_to_grandma.txt
+openssl sha256 letter_to_grandma.txt
+nano letter_to_grandma.txt
+
+cat sample.img_SHA_256.sig
+sha256sum sample.img
+
+hashs criptográficos - karpesky
+
+
+
+
+

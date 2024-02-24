@@ -1,0 +1,16 @@
+VPC
+
+Acesso VM AWS
+USUARIO: ubuntu
+IP: 3.85.18.4
+chmod 400 "KEIR-PAIR-SERVER-LNX-TESTE-A.pem"
+ssh -i "KEIR-PAIR-SERVER-LNX-TESTE-A.pem" ubuntu@3.85.18.4
+
+----
+
+de Clemilson Antonio de Oliveira para todos:    2:11 PM
+Acesso VM Huawei
+USUARIO: root
+IP: 101.44.195.216
+chmod 600 "KEY-PAIR-SERVER-LNX-H.pem"
+ssh -i "KEY-PAIR-SERVER-LNX-H.pem" root@101.44.195.216

@@ -1,0 +1,53 @@
+https://www.netacad.com/portal/web/self-enroll/m/course-2167074
+https://skillsforall.com/course/python-essentials-1?courseLang=pt-BR&instance_id=f9b6e438-6741-4fdf-881a-bc0153eeb750
+
+Baixar windows server
+https://www.microsoft.com/pt-br/evalcenter/evaluate-windows-server-2019?filetype=ISO
+
+Windows server 2012
+https://gist.github.com/vinhjaxt/a774ac87b0313a34f4c445048d8e13cf
+
+Linux portatil
+https://tails.net/index.pt.html
+
+https://learn.microsoft.com/pt-br/training/paths/powershell/
+
+https://cursa.com.br/home/course/curso-de-powershell-fundamentos/165
+
+https://learn.microsoft.com/pt-br/training/modules/introduction-to-powershell/
+
+54.242.107.232
+Fm)AxCqX@$FAq1I@EG778Fx04S2tgY)(
+Administrator
+
+
+https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/uninstall-remote-desktop-connection?tabs=gui
+
+https://explore.skillbuilder.aws/learn
+
+https://calculator.aws/#/estimate
+
+
+Open an SSH client.
+Locate your private key file. The key used to launch this instance is KEY-PAIR-LNX-SERVER.pem
+Run this command, if necessary, to ensure your key is not publicly viewable.
+ chmod 400 "KEY-PAIR-LNX-SERVER.pem"
+Connect to your instance using its Public IP:
+ 3.85.79.161
+Example:
+ ssh -i "KEY-PAIR-LNX-SERVER.pem" ubuntu@3.85.79.161
+
+
+https://www.linkedin.com/in/mariliabrito/
+
+
+https://shell.cloud.google.com/
+
+https://t.me/+tUQ9imjtjhdkZDgx
+
+https://www.netacad.com/portal/node/4035
+
+https://learn.microsoft.com/pt-br/sysinternals/downloads/rammap
+
+
+
